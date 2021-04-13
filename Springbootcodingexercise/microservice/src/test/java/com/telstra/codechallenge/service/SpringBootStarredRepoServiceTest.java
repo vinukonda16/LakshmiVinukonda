@@ -45,9 +45,9 @@ public class SpringBootStarredRepoServiceTest {
 		List<StarredRepo.Items> list = Arrays.asList(new StarredRepo.Items(879, "Python","OpenMMLab Text Detection, Recognition and Understanding Toolbox" ,"mmocr","https://github.com/open-mmlab/mmocr"),
 				new StarredRepo.Items(542, "Go","Contextual Content Discovery Tool","kiterunner" "https://github.com/assetnote/kiterunner"));
 		repoObj.setItems(list);
-		when(env.getProperty("users.base.url")).thenReturn("https://api.github.com");
+		when(env.getProperty("repo.base.url")).thenReturn("https://api.github.com");
 		when(restTemplate.getForObject(
-				env.getProperty("users.base.url") + "/search/repositories?q=created:>"+lastWeekDate+"&sort=stars&order=desc&per_page=3",
+				env.getProperty("repo.base.url") + "/search/repositories?q=created:>"+lastWeekDate+"&sort=stars&order=desc&per_page=3",
 				StarredRepo.class)).thenReturn(repoObj);
 		StarredRepo repo = service.getRepo();
 		assertEquals(repoObj, repo);
@@ -60,9 +60,9 @@ public class SpringBootStarredRepoServiceTest {
 		List<StarredRepo.Items> list = Arrays.asList(new StarredRepo.Items(879, "Python","OpenMMLab Text Detection, Recognition and Understanding Toolbox" ,"mmocr","https://github.com/open-mmlab/mmocr"),
 				new StarredRepo.Items(542, "Go","Contextual Content Discovery Tool","kiterunner" "https://github.com/assetnote/kiterunner"));
 		repoObj.setItems(list);
-		when(env.getProperty("users.base.url")).thenReturn("https://api.githubtest.com");
+		when(env.getProperty("repo.base.url")).thenReturn("https://api.githubtest.com");
 		when(restTemplate.getForObject(
-				env.getProperty("users.base.url") + "/search/repositories?q=created:>"+lastWeekDate+"&sort=stars&order=desc&per_page=3",
+				env.getProperty("repo.base.url") + "/search/repositories?q=created:>"+lastWeekDate+"&sort=stars&order=desc&per_page=3",
 				StarredRepo.class)).thenThrow(new InternalSeverException("Error while accessing Git API"));
 		service.getRepo();
 	}
@@ -79,10 +79,10 @@ public class SpringBootStarredRepoServiceTest {
 		List<StarredRepo.Items> list = Arrays.asList();
 
 		repoObj.setItems(list);
-		when(env.getProperty("users.base.url")).thenReturn("https://api.github.com");
+		when(env.getProperty("repo.base.url")).thenReturn("https://api.github.com");
 
 		when(restTemplate.getForObject(
-				env.getProperty("users.base.url") + "/search/repositories?q=created:>2021-04-04&sort=stars&order=desc&per_page=1" ,
+				env.getProperty("repo.base.url") + "/search/repositories?q=created:>2021-04-04&sort=stars&order=desc&per_page=1" ,
 				StarredRepo.class)).thenReturn(repoObj);
 		service.getRepo();
 
@@ -92,7 +92,7 @@ public class SpringBootStarredRepoServiceTest {
 	public void testRepoNotFoundExceptionforemptyList() {
 		StarredRepo repoObj = null;
 		when(restTemplate.getForObject(
-				env.getProperty("users.base.url") + "/search/repositories?q=created:>2021-04-04&sort=stars&order=desc&per_page=1" ,
+				env.getProperty("repo.base.url") + "/search/repositories?q=created:>2021-04-04&sort=stars&order=desc&per_page=1" ,
 				StarredRepo.class)).thenReturn(repoObj);
 		service.getRepo();
 	}

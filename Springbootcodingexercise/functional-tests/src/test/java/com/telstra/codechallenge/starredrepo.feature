@@ -5,7 +5,7 @@ Feature: As an api user I want to retrieve highest starred repo
 
   Scenario: Get a highest starred repo
     Given url microserviceUrl
-    And path '/starredrepo/2'
+    And path '/hottestRepo'
     When method GET
     Then status 200
     And match header Content-Type contains 'application/json'

@@ -14,15 +14,15 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
-public class SpringBootUsersController {
+public class SpringBootStarredRepoController {
 
 	@Autowired
-	private SpringBootUsersService springBootUsersService;
+	private SpringBootStarredRepoService springBootStarredRepoService;
 	
 
     @GetMapping("/hottestRepo")
-    public List<Items>  getUsers(){
-         return  this.springBootUsersService.getUsers().getUsers;
+    public List<Items>  getRepo(){
+         return  this.springBootStarredRepoService.getRepo();
     }
 
 	}

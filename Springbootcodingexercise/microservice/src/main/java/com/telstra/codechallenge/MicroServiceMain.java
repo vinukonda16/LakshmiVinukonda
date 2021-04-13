@@ -9,7 +9,7 @@ import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
 
 @SpringBootApplication
-@OpenAPIDefinition(info = @Info(title="Microservices API", version="1.0",description="Microservices API for quote and users Repo"))
+@OpenAPIDefinition(info = @Info(title="Microservices API", version="1.0",description="Microservices API for quote and starred Repo"))
 public class MicroServiceMain {
 
   public static void main(String[] args) {
