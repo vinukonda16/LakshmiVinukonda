@@ -54,7 +54,7 @@ public class SpringBootStarredRepoServiceTest {
         
 		StarredRepo repoObj = new StarredRepo();
 		List<StarredRepo.Items> list = Arrays.asList(new StarredRepo.Items(309, "c#","Get file less command execution for lateral movement." ,"SharpNoPSExec","https://github.com/juliourena/SharpNoPSExec"),
-				new StarredRepo.Items(542, "Go","Contextual Content Discovery Tool","kiterunner" ,"https://github.com/assetnote/kiterunner"));
+				new StarredRepo.Items(309, "c#","Get file less command execution for lateral movement." ,"SharpNoPSExec","https://github.com/juliourena/SharpNoPSExec"));
 		repoObj.setItems(list);
 		when(env.getProperty("repo.base.url")).thenReturn("https://api.github.com");
 		when(restTemplate.getForObject(
@@ -78,7 +78,7 @@ public class SpringBootStarredRepoServiceTest {
         
 		StarredRepo repoObj = new StarredRepo();
 		List<StarredRepo.Items> list = Arrays.asList(new StarredRepo.Items(309, "c#","Get file less command execution for lateral movement." ,"SharpNoPSExec","https://github.com/juliourena/SharpNoPSExec"),
-				new StarredRepo.Items(542, "Go","Contextual Content Discovery Tool","kiterunner" ,"https://github.com/assetnote/kiterunner"));
+				new StarredRepo.Items(309, "c#","Get file less command execution for lateral movement." ,"SharpNoPSExec","https://github.com/juliourena/SharpNoPSExec"));
 		repoObj.setItems(list);
 		when(env.getProperty("repo.base.url")).thenReturn("https://api.githubtest.com");
 		when(restTemplate.getForObject(
