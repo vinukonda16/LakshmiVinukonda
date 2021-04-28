@@ -35,12 +35,13 @@ public class SpringBootStarredRepoService{
 		StarredRepo repo = null;
 		Calendar cal = Calendar.getInstance();
         cal.add(Calendar.DATE, -7);
-        System.out.println("Date = "+ cal.getTime());
 
         SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
         String lastWeekDate = format1.format(cal.getTime());
         if (limit <= 0)
+	{
 			throw new MethodArgumentNotValidException("Number of accounts to return should be greater than zero");
+	}
 		try {
 			repo = restTemplate.getForObject(env.getProperty("repo.base.url")
 					+ "/search/repositories?q=created:>"+lastWeekDate+"&sort=stars&order=desc&per_page="+ limit, StarredRepo.class);
