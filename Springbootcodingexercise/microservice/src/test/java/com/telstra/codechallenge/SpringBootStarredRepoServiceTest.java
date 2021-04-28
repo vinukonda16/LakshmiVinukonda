@@ -47,13 +47,13 @@ public class SpringBootStarredRepoServiceTest {
 		
 		Calendar cal = Calendar.getInstance();
         cal.add(Calendar.DATE, -7);
-        System.out.println("Date = "+ cal.getTime());
+        //System.out.println("Date = "+ cal.getTime());
 
         SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
         String lastWeekDate = format1.format(cal.getTime());
         
 		StarredRepo repoObj = new StarredRepo();
-		List<StarredRepo.Items> list = Arrays.asList(new StarredRepo.Items(879, "Python","OpenMMLab Text Detection, Recognition and Understanding Toolbox" ,"mmocr","https://github.com/open-mmlab/mmocr"),
+		List<StarredRepo.Items> list = Arrays.asList(new StarredRepo.Items(309, "c#","Get file less command execution for lateral movement." ,"SharpNoPSExec","https://github.com/juliourena/SharpNoPSExec"),
 				new StarredRepo.Items(542, "Go","Contextual Content Discovery Tool","kiterunner" ,"https://github.com/assetnote/kiterunner"));
 		repoObj.setItems(list);
 		when(env.getProperty("repo.base.url")).thenReturn("https://api.github.com");
@@ -71,13 +71,13 @@ public class SpringBootStarredRepoServiceTest {
 		
 		Calendar cal = Calendar.getInstance();
         cal.add(Calendar.DATE, -7);
-        System.out.println("Date = "+ cal.getTime());
+        //System.out.println("Date = "+ cal.getTime());
 
         SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
         String lastWeekDate = format1.format(cal.getTime());
         
 		StarredRepo repoObj = new StarredRepo();
-		List<StarredRepo.Items> list = Arrays.asList(new StarredRepo.Items(879, "Python","OpenMMLab Text Detection, Recognition and Understanding Toolbox" ,"mmocr","https://github.com/open-mmlab/mmocr"),
+		List<StarredRepo.Items> list = Arrays.asList(new StarredRepo.Items(309, "c#","Get file less command execution for lateral movement." ,"SharpNoPSExec","https://github.com/juliourena/SharpNoPSExec"),
 				new StarredRepo.Items(542, "Go","Contextual Content Discovery Tool","kiterunner" ,"https://github.com/assetnote/kiterunner"));
 		repoObj.setItems(list);
 		when(env.getProperty("repo.base.url")).thenReturn("https://api.githubtest.com");
