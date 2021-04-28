@@ -26,7 +26,7 @@ import com.telstra.codechallenge.service.SpringBootStarredRepoService;
 import com.telstra.codechallenge.util.InternalSeverException;
 import com.telstra.codechallenge.util.RepoNotFoundException;
 
-@RunWith(MockitoJUnitRunner.class)
+@RunWith(MockitoJUnitRunner.Silent.class)
 public class SpringBootStarredRepoServiceTest {
 	
 	@InjectMocks
