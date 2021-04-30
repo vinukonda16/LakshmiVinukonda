@@ -39,15 +39,14 @@ public class SpringBootStarredRepoServiceTest {
 	private Environment env;
 	
 	StarredRepo repo = null;
-	
+
 
 	@Test
 	public void testgetRepoGitApi() {
 		
 		
-		Calendar cal = Calendar.getInstance();
+	Calendar cal = Calendar.getInstance();
         cal.add(Calendar.DATE, -7);
-        //System.out.println("Date = "+ cal.getTime());
 
         SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
         String lastWeekDate = format1.format(cal.getTime());
@@ -71,7 +70,6 @@ public class SpringBootStarredRepoServiceTest {
 		
 		Calendar cal = Calendar.getInstance();
         cal.add(Calendar.DATE, -7);
-        //System.out.println("Date = "+ cal.getTime());
 
         SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
         String lastWeekDate = format1.format(cal.getTime());
